@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+jar {
+    enabled = false
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+allprojects {
+    tasks.register("selfIntroduction") {
+        doLast {
+            println("Project: ${this.project.name}")
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    group = "dev.okmt"
+    version = '0.0.1-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.13.2'
+    }
+}
+
+project(':subproject1') {
+    dependencies {
+        implementation project(':shared')
+    }
+}
+
+project(':shared') {
+    jar {
+        enabled = true
+    }
+}
