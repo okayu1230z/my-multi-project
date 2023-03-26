@@ -103,7 +103,7 @@ BUILD SUCCESSFUL in 310ms
 
 ![tasks](./docs/tasks.png)
 
-<p>subpeojectsIntroduction taskとintroduction taskなども追加されていることが確認できる</p>
+<p>subpeojectsIntroduction taskとallprojectsIntroduction taskなども追加されていることが確認できる</p>
 
 <p>buildタスクなどで実行可能jarを作成できる</p>
 
