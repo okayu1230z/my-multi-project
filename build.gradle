@@ -13,7 +13,7 @@ allprojects {
 }
 
 allprojects {
-    tasks.register("selfIntroduction") {
+    tasks.register("allprojectsIntroduction") {
         doLast {
             println("Project: ${this.project.name}")
         }
@@ -33,11 +33,37 @@ subprojects {
     dependencies {
         testImplementation 'junit:junit:4.13.2'
     }
+
+    tasks.register("subprojectsIntroduction") {
+        doLast {
+            println("Project: ${this.project.name}")
+        }
+    }
 }
 
 project(':subproject1') {
     dependencies {
         implementation project(':shared')
+    }
+
+    jar {
+        manifest {
+            attributes 'Main-Class': 'dev.okmt.subproject1.Main'
+        }
+        from configurations.compileClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+project(':subproject2') {
+    jar {
+        manifest {
+            attributes 'Main-Class': 'dev.okmt.subproject2.Main'
+        }
+        from configurations.compileClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
     }
 }
 
