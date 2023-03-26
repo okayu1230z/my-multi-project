@@ -1,6 +1,42 @@
 <h1>マルチプロジェクトのサンプル</h1>
 
-<h4>マルチプロジェクトの実行方法</h4>
+<h4>ディレクトリ構成</h4>
+
+```
+$ tree -L 2
+.
+├── README.md
+├── build
+│   ├── libs
+│   └── tmp
+├── build.gradle
+├── docs
+│   └── tasks.png
+├── gradle
+│   └── wrapper
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+├── shared
+│   ├── bin
+│   ├── build
+│   ├── build.gradle
+│   └── src
+├── subproject1
+│   ├── bin
+│   ├── build
+│   ├── build.gradle
+│   └── src
+└── subproject2
+    ├── bin
+    ├── build
+    ├── build.gradle
+    └── src
+
+19 directories, 9 files
+```
+
+<h4>タスクの実行方法</h4>
 
 <p>gradleスクリプトでgradle taskを確認可能</p>
 
