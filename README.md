@@ -1,4 +1,4 @@
-<h1>マルチプロジェクトのサンプル</h1>
+<h1 align="center">Gradle Multi-project Sample</h1>
 
 <h4>ディレクトリ構成</h4>
 
